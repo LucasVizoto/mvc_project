@@ -11,4 +11,3 @@ def my_function():
 # snake_case -> Variaveis e Funções em python
 # PascalCase - > Classes em Python
 # cammelCase -> Utilizado em JS
-
