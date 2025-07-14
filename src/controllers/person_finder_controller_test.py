@@ -10,7 +10,7 @@ class MockPerson():
 
 
 class MockPeopleRepository():
-    def get_person(self, persnon_id: int) -> MockPerson:
+    def get_person(self) -> MockPerson:
         return MockPerson("John", "Doe", "Rex", "Dog")
 
 def test_find():
