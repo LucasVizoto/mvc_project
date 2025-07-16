@@ -10,4 +10,4 @@ def test_delete_pet(mocker):
     pet_deleter_controller.delete(pet_name)
 
     # Assert
-    mock_pets_repository.delete_pet.assert_called_once_with(pet_name)
+    mock_pets_repository.delete_pets.assert_called_once_with(pet_name)
