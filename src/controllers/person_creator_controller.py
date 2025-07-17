@@ -1,6 +1,7 @@
 import re
 
 from src.models.sqlite.interfaces.people_repository import PeopleRepositoryInteface
+from src.errors.error_types.http_bad_request import HttpBadRequestError
 from .interfaces.person_creator_controller import PersonCreatorControllerInterface
 
 class PersonCreatorController(PersonCreatorControllerInterface):
@@ -25,7 +26,7 @@ class PersonCreatorController(PersonCreatorControllerInterface):
         non_valid_caracteres = re.compile(r'[^a-zA-Z]')
 
         if non_valid_caracteres.search(first_name) or non_valid_caracteres.search(last_name):
-            raise Exception("First name and last name must contain only letters.")
+            raise HttpBadRequestError("First name and last name must contain only letters.")
 
       
     def __insert_person_in_db(self, first_name: str, last_name: str, age: int, pet_id: int) -> None:
